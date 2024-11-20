@@ -1,0 +1,124 @@
+
+  .main-container {
+    position: relative; /* Contenedor principal para manejar posiciones relativas */
+    height: 100%;
+    background-color: #ffffff; /* Fondo azul */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .center-container {
+    text-align: center;
+    position: absolute; /* Cambié a 'absolute' para que no se vea afectado por el teclado */
+    top: 100px; /* Ajusta la distancia desde la parte superior de la pantalla */
+    left: 50%; /* Centra el logo horizontalmente */
+    transform: translateX(-50%); /* Esto asegura que el logo se quede centrado */
+    z-index: 5; /* Asegura que el logo esté por encima de otros elementos */
+  }
+  
+  .logo {
+    width: 200px; /* Ajusta el tamaño del logo */
+  }
+  
+  .login-box {
+    /* Cuadro para el formulario */
+    background-color: #128BBF;
+    position: absolute;
+    top: 390px; /* Comienza debajo del título */
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho de la página */
+  height: 540px; /* Altura desde su posición hacia abajo */
+  border-radius: 60px 60px 0 0; /* Bordes redondeados solo en la parte superior */
+  padding: 40px; /* Espacio interno para los campos */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Sombra hacia arriba */
+  z-index: 1; 
+
+  /* Título del cuadro */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Color del texto */
+  }
+  
+  }
+  
+
+  ion-item {
+    margin-bottom: 15px;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --background: #CFFDB9ff; /* Fondo blanco para los campos */
+    --border-radius: 30px; /* Bordes redondeados */
+    display: flex;
+    align-items: center;
+   
+  }
+ /* Campo de Usuario */
+ion-item:first-of-type {
+    margin-top: 50px; /* Añadir espacio extra encima del primer campo */
+  }
+  
+  /* Campo de Contraseña */
+  ion-item:last-of-type {
+    margin-bottom: 0; /* Evitar margen debajo del último campo */
+    height: 60px; /* Ajustamos la altura de los campos a su tamaño original */
+    width: 100%; 
+  }
+
+
+
+  ion-icon {
+    color: #070707; /* Color azul para los iconos */
+  }
+  
+  ion-input {
+    --background: #CFFDB9ff; /* Fondo blanco para el campo de entrada */
+    --border-radius: 30px; /* Bordes redondeados para el input */
+    --padding-start: 20px; /* Espacio adicional para el icono */
+    width: 100%;
+  }
+  
+  ion-button {
+    --background: #CFFDB9ff; /* Color azul del botón */
+    --color: rgb(15, 14, 14);
+    margin-top: 30px;
+   width: 200px; /* El ancho del botón se ajusta al contenido */
+  padding: 10px 0; /* Ajusta la altura y el espacio interno del botón */
+  --border-radius: 40px; /* Bordes redondeados */
+  font-size: 25px; /* Tamaño de la fuente */
+  }
+  
+  /* Estilos para el enlace de "Olvidaste tu contraseña?" */
+  .forgot-password {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .forgot-password a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .top-right-logo {
+    position: absolute;
+    top: 40px; /* Ajusta la distancia desde la parte superior */
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    width: 130px; /* Tamaño del logo */
+    z-index: 10;
+  }
+
+  .travel-title {
+    /* Título grande TRAVELVALERY */
+    position: absolute;
+    top: 310px; /* Ajusta la distancia desde el logo */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el título horizontalmente */
+    font-size: 30px; /* Tamaño grande para el título */
+    font-weight: bold; /* Negrita */
+    color: rgb(2, 2, 2); /* Blanco para que resalte sobre el fondo azul */
+  }
+

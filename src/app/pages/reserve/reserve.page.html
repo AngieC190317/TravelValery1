@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reservar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Reserva tu paquete</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Destino:</strong> {{ package.name }}</p>
+      <p><strong>Precio:</strong> ${{ package.price }}</p>
+      <p><strong>Días:</strong> {{ package.days }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label position="floating">Nombre completo</ion-label>
+    <ion-input [(ngModel)]="reservation.name" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Número de documento</ion-label>
+    <ion-input type="number" [(ngModel)]="reservation.document"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Cantidad de personas</ion-label>
+    <ion-input type="number" [(ngModel)]="reservation.people"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="confirmReservation()">Confirmar Reserva</ion-button>
+</ion-content>

@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle del Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img [src]="package.image"></ion-img>
+  <h1>{{ package.name }}</h1>
+  <p>{{ package.description }}</p>
+  <ion-button expand="full" routerLink="/reserve/{{package.id}}">Reservar</ion-button>
+</ion-content>

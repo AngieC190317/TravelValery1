@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Correo</ion-label>
+      <ion-input [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Teléfono</ion-label>
+      <ion-input [(ngModel)]="user.phone"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="saveProfile()">Guardar Cambios</ion-button>
+  </ion-list>
+</ion-content>
