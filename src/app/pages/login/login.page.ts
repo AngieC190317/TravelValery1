@@ -20,7 +20,7 @@ export class LoginPage {
       // Aquí iría la lógica para autenticar al usuario, por ejemplo, con una API.
       alert(`Iniciando sesión con ${this.username}`);
       // Si la autenticación es exitosa, redirige al usuario
-      this.router.navigate(['/home']);
+      this.router.navigate(['/tabs']);
     } else {
       alert('Por favor, ingresa tus datos.');
     }
