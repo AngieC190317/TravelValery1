@@ -1,11 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Inicio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">Este es el contenido del menu</ion-content>
+</ion-menu>
 
-<ion-content>
-  <h2>Categorías</h2>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-icon name="person" size="large"></ion-icon>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+    <ion-searchbar searchIcon="search-circle"></ion-searchbar>
+
+    <h2>Categorías</h2>
   <ion-chip *ngFor="let category of categories">
     <ion-label>{{ category }}</ion-label>
   </ion-chip>
@@ -18,4 +36,6 @@
       <ion-card-subtitle>${{ trip.price }}</ion-card-subtitle>
     </ion-card-header>
   </ion-card>
-</ion-content>
+  </ion-content>
+</div>
+
