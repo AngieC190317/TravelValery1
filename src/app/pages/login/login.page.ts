@@ -15,6 +15,12 @@ export class LoginPage {
  togglePassword() {
   this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
 }
+
+goToRegister() {
+  this.router.navigate(['/register']); // Cambia "/register" según la ruta de tu página de registro
+}
+
+
   login() {
     if (this.username && this.password) {
       // Aquí iría la lógica para autenticar al usuario, por ejemplo, con una API.
