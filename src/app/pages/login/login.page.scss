@@ -27,18 +27,27 @@
   /* Cuadro para el formulario */
   background-color: #128BBF;
   position: absolute;
-  top: 410px; /* Comienza debajo del título */
+  top: 380px; /* Comienza debajo del título */
 left: 0;
 width: 100%; /* Ocupa todo el ancho de la página */
 height: 540px; /* Altura desde su posición hacia abajo */
 border-radius: 60px 60px 0 0; /* Bordes redondeados solo en la parte superior */
 padding: 30px; /* Espacio interno para los campos */
 z-index: 1; 
-
-
 }
 
-
+.login-box::before {
+  content: ''; /* Necesario para que el pseudo-elemento sea visible */
+  position: absolute;
+  top: -20px; /* Ajusta la posición vertical */
+  left: 50%; /* Centra horizontalmente el triángulo */
+  transform: translateX(-50%); /* Asegura que el triángulo esté centrado */
+  
+  border-left: 50px solid transparent; /* Lado izquierdo del triángulo */
+  border-right: 50px solid transparent; /* Lado derecho del triángulo */
+  border-bottom: 50px solid #128BBF; /* Color del triángulo */
+  z-index: 2; /* Asegura que esté por encima del cuadro */
+}
 
 
 ion-item {
@@ -49,20 +58,22 @@ ion-item {
   --border-radius: 30px; /* Bordes redondeados */
 display: flex;
   align-items: center;
+  text-align: center;
 }
 /* Campo de Usuario */
 ion-item:first-of-type {
-  margin-top: 50px; /* Añadir espacio extra encima del primer campo */
-  --min-height: 50px; /* Altura mínima del campo */
-  --height: 80px; /* Altura total del campo */
+  margin-top: 70px; /* Añadir espacio extra encima del primer campo */
+  --min-height: 60px; /* Altura mínima del campo */
+  --height: 60px; /* Altura total del campo */
+ --padding-end: 35px;
 }
 
 /* Campo de Contraseña */
 ion-item:last-of-type {
   margin-bottom: 0; /* Evitar margen debajo del último campo */
  // height: 60px; /* Ajustamos la altura de los campos a su tamaño original */
-  --min-height: 50px; /* Altura mínima del campo */
-  --height: 80px; /* Altura total del campo */
+  --min-height: 60px; /* Altura mínima del campo */
+  --height: 60px; /* Altura total del campo */
 }
 
 
@@ -72,24 +83,24 @@ ion-icon {
 }
 
 ion-input {
-  --background: #CFFDB9ff; /* Fondo blanco para el campo de entrada */
+  --background: #CFFDB9ff; /* Fondo para el campo de entrada */
   --color: #000; 
   --border-radius: 30px; /* Bordes redondeados para el input */
   --padding-start: 300px; /* Espacio adicional para el icono */
   --placeholder-color: #000000; /* Color del texto del placeholder */
   --placeholder-font-size: 16px; /* Tamaño del texto del placeholder */
-  font-size: 16px; /* Asegura que el texto del input tenga el tamaño correcto */
+  font-size: 25px; /* Asegura que el texto del input tenga el tamaño correcto */
   --padding-start: 20px; /* Espacio interno a la izquierda del campo */
+
 }
 
 ion-button {
   --background: #CFFDB9ff; /* Color azul del botón */
   --color: rgb(15, 14, 14);
   margin-top: 30px;
- width: 200px; /* El ancho del botón se ajusta al contenido */
-padding: 10px 0; /* Ajusta la altura y el espacio interno del botón */
+ width: 160px; /* El ancho del botón se ajusta al contenido */
 --border-radius: 40px; /* Bordes redondeados */
-font-size: 25px; /* Tamaño de la fuente */
+   font-size: 18px; /* Tamaño de la fuente */
 }
 
 /* Estilos para el enlace de "Olvidaste tu contraseña?" */
@@ -114,10 +125,10 @@ font-size: 25px; /* Tamaño de la fuente */
 .travel-title {
   /* Título grande TRAVELVALERY */
   position: absolute;
-  top: 310px; /* Ajusta la distancia desde el logo */
+  top: 280px; /* Ajusta la distancia desde el logo */
   left: 50%;
   transform: translateX(-50%); /* Centra el título horizontalmente */
-  font-size: 30px; /* Tamaño grande para el título */
+  font-size: 40px; /* Tamaño grande para el título */
   font-weight: bold; /* Negrita */
   color: rgb(2, 2, 2); /* Blanco para que resalte sobre el fondo azul */
 }
@@ -128,18 +139,38 @@ font-size: 25px; /* Tamaño de la fuente */
   align-items: center; /* Centra el contenido horizontalmente */
   justify-content: center; /* Centra el contenido verticalmente */
   cursor: pointer; /* Hace que el icono sea clickeable */
-  margin-top: 20px; /* Espacio superior */
+  margin-top: 40px; /* Espacio superior */
   text-align: center;
 }
 
 .gmail-button img {
   width: 50px; /* Tamaño del logo */
   height: 50px; /* Aseguramos que sea cuadrado */
-  margin-bottom: 8px; /* Espacio entre el logo y el texto */
+  margin-bottom: 5px; /* Espacio entre el logo y el texto */
 }
 
 .gmail-button span {
   font-size: 14px; /* Tamaño del texto */
   color: #333; /* Color del texto */
   font-weight: bold; /* Negrita para el texto */
+}
+.register-link {
+  margin-top: 10px; /* Espacio encima del texto */
+  text-align: center; /* Centra el texto */
+  
+}
+
+.register-link p {
+  font-size: 14px; /* Tamaño del texto */
+  color: #ffffff; /* Color del texto */
+}
+
+.register-link a {
+  color: #ffcc00; /* Color amarillo para destacar el enlace */
+  font-weight: bold; /* Negrita para resaltar el enlace */
+  text-decoration: none; /* Quita el subrayado */
+}
+
+.register-link a:hover {
+  text-decoration: underline; /* Subrayado al pasar el cursor */
 }
