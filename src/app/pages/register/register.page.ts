@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router'; // Para redirigir después del registro
+import { AuthService } from '../services/auth.service'; // Servicio de autenticación
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -11,7 +12,7 @@ export class RegisterPage {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   register() {
     if (this.password !== this.confirmPassword) {
@@ -19,12 +20,11 @@ export class RegisterPage {
       return;
     }
 
-    if (!this.fullName || !this.email || !this.password) {
-      alert('Por favor, completa todos los campos');
-      return;
+    if (this.authService.register(this.email, this.password)) {
+      alert('Registro exitoso');
+      this.router.navigate(['/login']); // Redirige al inicio de sesión
+    } else {
+      alert('El correo ya está registrado');
     }
-
-    alert(`Registro exitoso para ${this.fullName}`);
-    // Aquí puedes agregar lógica para guardar los datos en una base de datos
   }
 }
