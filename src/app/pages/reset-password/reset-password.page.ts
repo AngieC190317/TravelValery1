@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // Para redirigir después de la recuperación
-
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.page.html',
@@ -9,19 +9,26 @@ import { Router } from '@angular/router'; // Para redirigir después de la recup
 export class ResetPasswordPage {
   email: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  resetPassword() {
-    if (this.email) {
-      alert(`Instrucciones de recuperación enviadas a ${this.email}`);
-      this.router.navigate(['/login']); // Redirige al login después de la recuperación
-    } else {
-      alert('Por favor ingresa tu correo electrónico');
-    }
-  }
 
    // Función para volver al inicio de sesión
    goToLogin() {
     this.router.navigate(['/login']); // Redirige al inicio de sesión
+  }
+
+  async resetPassword() {
+    if (!this.email) {
+      alert('Por favor, ingresa tu correo electrónico');
+      return;
+    }
+
+    try {
+     await this.authService.resetPassword(this.email);
+      alert('Se ha enviado un correo para restablecer tu contraseña.');
+    } catch (error) {
+      alert('Ocurrió un error. Verifica que el correo esté registrado.');
+      console.error(error);
+    }
   }
 }

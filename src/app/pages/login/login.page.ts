@@ -30,4 +30,17 @@ login() {
     alert('Credenciales incorrectas');
   }
 }
+
+//Funcion para iniciar sesion con google
+async loginWithGoogle() {
+  try {
+    const user = await this.authService.loginWithGoogle();
+    if (user) {
+      console.log('Inicio de sesión exitoso:', user);
+      this.router.navigate(['/tabs']); // Redirige al home después del inicio de sesión
+    }
+  } catch (error) {
+    console.error('Error al iniciar sesión con Google:', error);
+  }
+}
 }
