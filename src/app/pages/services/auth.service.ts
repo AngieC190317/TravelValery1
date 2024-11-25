@@ -15,7 +15,10 @@ export class AuthService {
 
 constructor(private afAuth: AngularFireAuth) {}
 
-
+  // Obtener los datos del usuario autenticado
+  getUser() {
+    return this.afAuth.authState; // Devuelve un Observable con el estado del usuario
+  }
 
   // Método para iniciar sesión con correo y contraseña
   async login(email: string, password: string): Promise<boolean> {
