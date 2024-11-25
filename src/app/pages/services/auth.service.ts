@@ -15,6 +15,22 @@ export class AuthService {
 
 constructor(private afAuth: AngularFireAuth) {}
 
+
+
+  // Método para iniciar sesión con correo y contraseña
+  async login(email: string, password: string): Promise<boolean> {
+    try {
+      const userCredential = await this.afAuth.signInWithEmailAndPassword(email, password);
+      console.log('Inicio de sesión exitoso:', userCredential.user);
+      return true; // Credenciales válidas
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+      return false; // Credenciales incorrectas
+    }
+  }
+
+
+
 // Iniciar sesión con Google
 async loginWithGoogle(): Promise<firebase.User | null> {
   try {
@@ -34,18 +50,23 @@ async loginWithGoogle(): Promise<firebase.User | null> {
 }
 
   // Función para verificar las credenciales del usuario
-  login(email: string, password: string): boolean {
-    const user = this.users.find((u) => u.email === email && u.password === password);
-    return user !== undefined;
-  }
 
-  // Función para registrar un nuevo usuario
-  register(email: string, password: string): boolean {
-    if (this.users.some((user) => user.email === email)) {
-      return false; // Si ya existe un usuario con ese correo
+
+   // Registrar usuario con correo y contraseña
+   async register(email: string, password: string): Promise<void> {
+    try {
+      await this.afAuth.createUserWithEmailAndPassword(email, password);
+      console.log('Usuario registrado exitosamente:', email);
+    } catch (error: any) {
+      // Captura los errores específicos de Firebase
+      if (error.code === 'auth/email-already-in-use') {
+        throw new Error('El correo ya está registrado.');
+      } else if (error.code === 'auth/weak-password') {
+        throw new Error('La clave debe tener al menos 6 caracteres.');
+      } else {
+        throw error; // Lanza otros errores no manejados
+      }
     }
-    this.users.push({ email, password });
-    return true;
   }
 
     // Enviar correo de restablecimiento de contraseña

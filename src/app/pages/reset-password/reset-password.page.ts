@@ -17,7 +17,7 @@ export class ResetPasswordPage {
     this.router.navigate(['/login']); // Redirige al inicio de sesión
   }
 
-  async resetPassword() {
+  async sendResetEmail() {
     if (!this.email) {
       alert('Por favor, ingresa tu correo electrónico');
       return;
@@ -26,6 +26,7 @@ export class ResetPasswordPage {
     try {
      await this.authService.resetPassword(this.email);
       alert('Se ha enviado un correo para restablecer tu contraseña.');
+      this.email = ''; // Limpiar el campo después de enviar el correo
     } catch (error) {
       alert('Ocurrió un error. Verifica que el correo esté registrado.');
       console.error(error);

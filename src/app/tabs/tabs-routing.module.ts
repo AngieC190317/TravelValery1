@@ -20,8 +20,8 @@ const routes: Routes = [
         loadChildren: () => import('../pages/notifications/notifications.module').then(m => m.NotificationsPageModule)
       },
       {
-        path: 'my-reservations',
-        loadChildren: () => import('../pages/my-reservations/my-reservations.module').then(m => m.MyReservationsPageModule)
+        path: 'favoritos', // Actualizamos aquí
+        loadChildren: () => import('../pages/favoritos/favoritos.module').then(m => m.FavoritosPageModule),
       },
       {
         path: '',
