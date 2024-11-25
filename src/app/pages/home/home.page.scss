@@ -1,0 +1,85 @@
+/* Fondo dividido: azul arriba, blanco abajo */
+ion-content {
+    --background: linear-gradient(to bottom, #128BBF 70%, #ffffff 40%);
+  }
+  
+  /* Estilo para el saludo */
+  .saludo-container h1 {
+    margin: 20px;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: left;
+    padding-left: 15px;
+  }
+  
+  /* Barra de búsqueda */
+  .search-container ion-item {
+    --background: #0a5a7e; /* Azul más oscuro */
+    border-radius: 15px;
+    margin: 50px 15px;
+    --color: #ffffff; /* Texto blanco */
+   
+  }
+  .search-container ion-input {
+    --padding-start: 10px; /* Reducimos el espacio interno */
+    font-size: 24px; /* Ajustamos el tamaño de la fuente */
+  }
+  
+  .search-container ion-icon {
+    color: #ffffff;
+  }
+  
+  /* Categorías */
+  .categorias-container {
+    margin: 20px 15px;
+    text-align: center;
+  }
+  
+  .categorias-container h2 {
+    color: #ffffff;
+  }
+  
+  .categorias-grid {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  ion-card {
+    width: 30%;
+    text-align: center;
+    --background: #ffffff;
+    border-radius: 15px;
+  }
+  
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  ion-card-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #333333;
+  }
+  
+
+  
+/* Raya verde en la parte superior de los tabs */
+.raya-verde {
+    height: 5px;
+    background-color: #00ff00; /* Verde */
+    position: absolute; /* Posicionamos la línea encima de los tabs */
+    top: 0; /* Colocamos en el borde superior */
+    left: 0;
+    width: 100%; /* Aseguramos que la línea ocupe todo el ancho de la pantalla */
+    z-index: 10; /* Aseguramos que la línea quede por encima de otros elementos */
+  }
+  
+  /* Estilo para los botones de los tabs */
+  ion-tab-bar {
+    position: relative;
+    z-index: 5; /* Aseguramos que los botones del tab estén debajo de la línea verde */
+  }

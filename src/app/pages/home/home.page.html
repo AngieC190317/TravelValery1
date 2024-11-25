@@ -1,41 +1,88 @@
-<ion-menu side="start" contentId="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">Este es el contenido del menu</ion-content>
-</ion-menu>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botón del menú -->
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="end">
+      <!-- Icono del perfil -->
+      <ion-button [routerLink]="['/perfil']">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-<div class="ion-page" id="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-buttons slot="end">
-        <ion-icon name="person" size="large"></ion-icon>
-      </ion-buttons>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
 
-    <ion-searchbar searchIcon="search-circle"></ion-searchbar>
+ 
 
+<ion-content>
+  <div class="saludo-container">
+    <h1>Hola, {{ user?.displayName || 'Usuario' }}</h1>
+  </div>
+  <!-- Barra de búsqueda -->
+  <div class="search-container">
+    <ion-item>
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-input placeholder="Buscar destinos..."></ion-input>
+    </ion-item>
+  </div>
+
+  <!-- Categorías -->
+  <div class="categorias-container">
     <h2>Categorías</h2>
-  <ion-chip *ngFor="let category of categories">
-    <ion-label>{{ category }}</ion-label>
-  </ion-chip>
+    <div class="categorias-grid">
+      <ion-card [routerLink]="['/viajes/nacionales']">
+        <ion-card-content>
+          <ion-icon name="earth" size="large"></ion-icon>
+          <p>Nacionales</p>
+        </ion-card-content>
+      </ion-card>
 
-  <h2>Próximos Viajes</h2>
-  <ion-card *ngFor="let trip of featuredTrips" routerLink="/package-details/{{trip.id}}">
-    <img [src]="trip.image" />
-    <ion-card-header>
-      <ion-card-title>{{ trip.name }}</ion-card-title>
-      <ion-card-subtitle>${{ trip.price }}</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
+      <ion-card [routerLink]="['/viajes/internacionales']">
+        <ion-card-content>
+          <ion-icon name="airplane" size="large"></ion-icon>
+          <p>Internacionales</p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card [routerLink]="['/viajes/pasadias']">
+        <ion-card-content>
+          <ion-icon name="sunny" size="large"></ion-icon>
+          <p>Pasadías</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+ <!-- BANNER -->
+
+
+
+
+<ion-menu side="start" menuId="first" contentId="main">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+
+  <ion-content>
+    <ion-list>
+      <ion-item [routerLink]="['/contacto']">Contacto</ion-item>
+      <ion-item [routerLink]="['/sobre-nosotros']">Sobre Nosotros</ion-item>
+      <ion-item [routerLink]="['/reservas']">Mis Reservas</ion-item>
+    </ion-list>
   </ion-content>
+</ion-menu>
+    
+ <!-- Raya verde -->
+ <div class="raya-verde"></div>
+ 
+<div id="main">
+  <!-- Contenido principal -->
 </div>
-

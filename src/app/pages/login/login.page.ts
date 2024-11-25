@@ -22,12 +22,36 @@ goToRegister() {
   this.router.navigate(['/register']); // Cambia "/register" según la ruta de tu página de registro
 }
 
-login() {
-  if (this.authService.login(this.username, this.password)) {
-    // Si las credenciales son correctas, navegar a la página principal o dashboard
-    this.router.navigate(['/tabs']);
+async login() {
+  if (!this.username || !this.password) {
+    alert('Por favor, ingresa tu correo y contraseña.');
+    return;
+  }
+
+  const success = await this.authService.login(this.username, this.password);
+  if (success) {
+    this.router.navigate(['/tabs']); // Redirige si las credenciales son correctas
   } else {
-    alert('Credenciales incorrectas');
+    alert('Credenciales incorrectas. Por favor, intenta nuevamente.');
+  }
+    // Limpiar los campos después de intentar iniciar sesión
+    this.username = '';
+    this.password = '';
+}
+
+//Funcion para iniciar sesion con google
+async loginWithGoogle() {
+  try {
+    const user = await this.authService.loginWithGoogle();
+    if (user) {
+      console.log('Inicio de sesión exitoso:', user);
+      this.router.navigate(['/tabs']); // Redirige al home después del inicio de sesión
+    }
+  } catch (error) {
+    console.error('Error al iniciar sesión con Google:', error);
   }
 }
+
+
+
 }
