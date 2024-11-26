@@ -1,56 +1,83 @@
+
 /* Fondo dividido: azul arriba, blanco abajo */
-ion-content {
+.primary {
     --background: linear-gradient(to bottom, #128BBF 70%, #ffffff 40%);
   }
-  
-  /* Estilo para el saludo */
+
+  .main{
+    height: auto;
+    overflow: hidden;
+  }
+
+  /* Estilo para el saludo
   .saludo-container h1 {
-    margin: 20px;
+    margin-top: 1500px;
     font-size: 24px;
     color: #ffffff;
     text-align: left;
     padding-left: 15px;
   }
-  
+*/
+  .primary{
+    margin-top: 200px;
+    .saludo-container{
+      margin-top: 100px;
+      h1{
+        margin-top: 100px;
+        font-size: 24px;
+        color: #ffffff;
+        text-align: left;
+        padding-left: 15px;
+      }
+    }
+  }
+
+  swiper-container{
+    height: 350px;
+    width: 350px;
+    overflow: hidden;
+  }
+
+
   /* Barra de búsqueda */
   .search-container ion-item {
     --background: #0a5a7e; /* Azul más oscuro */
     border-radius: 15px;
     margin: 50px 15px;
     --color: #ffffff; /* Texto blanco */
-   
+
   }
   .search-container ion-input {
     --padding-start: 10px; /* Reducimos el espacio interno */
     font-size: 24px; /* Ajustamos el tamaño de la fuente */
   }
-  
+
   .search-container ion-icon {
     color: #ffffff;
   }
-  
+
   /* Categorías */
   .categorias-container {
     margin: 20px 15px;
     text-align: center;
   }
-  
+
   .categorias-container h2 {
     color: #ffffff;
   }
-  
+
   .categorias-grid {
     display: flex;
     justify-content: space-around;
   }
-  
+
   ion-card {
     width: 30%;
     text-align: center;
     --background: #ffffff;
     border-radius: 15px;
   }
-  
+
   ion-card-content {
     display: flex;
     flex-direction: column;
@@ -58,15 +85,15 @@ ion-content {
     justify-content: center;
     gap: 5px;
   }
-  
+
   ion-card-content p {
     margin: 0;
     font-size: 14px;
     color: #333333;
   }
-  
 
-  
+
+
 /* Raya verde en la parte superior de los tabs */
 .raya-verde {
     height: 5px;
@@ -77,9 +104,79 @@ ion-content {
     width: 100%; /* Aseguramos que la línea ocupe todo el ancho de la pantalla */
     z-index: 10; /* Aseguramos que la línea quede por encima de otros elementos */
   }
-  
+
   /* Estilo para los botones de los tabs */
   ion-tab-bar {
     position: relative;
     z-index: 5; /* Aseguramos que los botones del tab estén debajo de la línea verde */
   }
+
+.custom-searchbar{
+  margin-top: 150px;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  background-color: #128BBF;
+  height: 100%;
+  justify-content: center;
+}
+
+.secundary-container{
+  background-color: white;
+  height: 45%;
+  overflow: hidden;
+}
+
+ion-img{
+  height: 50px;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: row; /* Los botones se alinean en fila */
+  gap: 20px; /* Espaciado entre botones */
+  justify-content: center; /* Centrar los botones */
+  flex-wrap: wrap; /* Permitir que se envuelvan si no caben */
+
+  ion-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    width: 110px;
+    --background: #0E78A7; /* Fondo azul */
+    --color: white; /* Texto blanco */
+    border-radius: 10px;
+
+    .button-content {
+      display: flex;
+      flex-direction: column; /* Alinea la imagen y el texto en columna */
+      align-items: center; /* Centra la imagen y el texto horizontalmente */
+      justify-content: center; /* Centra el contenido verticalmente */
+
+      img {
+        width: 50px; /* Tamaño de la imagen */
+        height: auto;
+        margin-bottom: 5px; /* Separación entre imagen y texto */
+      }
+
+      ion-label {
+        font-size: 14px; /* Tamaño del texto */
+        font-weight: bold;
+        line-height: 1.2;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

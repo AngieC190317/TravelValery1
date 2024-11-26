@@ -1,88 +1,58 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <!-- Botón del menú -->
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Home</ion-title>
-    <ion-buttons slot="end">
-      <!-- Icono del perfil -->
-      <ion-button [routerLink]="['/perfil']">
-        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-
- 
-
-<ion-content>
-  <div class="saludo-container">
-    <h1>Hola, {{ user?.displayName || 'Usuario' }}</h1>
-  </div>
-  <!-- Barra de búsqueda -->
-  <div class="search-container">
-    <ion-item>
-      <ion-icon name="search" slot="start"></ion-icon>
-      <ion-input placeholder="Buscar destinos..."></ion-input>
-    </ion-item>
-  </div>
-
-  <!-- Categorías -->
-  <div class="categorias-container">
-    <h2>Categorías</h2>
-    <div class="categorias-grid">
-      <ion-card [routerLink]="['/viajes/nacionales']">
-        <ion-card-content>
-          <ion-icon name="earth" size="large"></ion-icon>
-          <p>Nacionales</p>
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card [routerLink]="['/viajes/internacionales']">
-        <ion-card-content>
-          <ion-icon name="airplane" size="large"></ion-icon>
-          <p>Internacionales</p>
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card [routerLink]="['/viajes/pasadias']">
-        <ion-card-content>
-          <ion-icon name="sunny" size="large"></ion-icon>
-          <p>Pasadías</p>
-        </ion-card-content>
-      </ion-card>
+<ion-content class="main">
+  <ion-content class="primary">
+    <div class="saludo-container">
+      <h1>Hola, {{ user?.displayName || 'Usuario' }}</h1>
     </div>
-  </div>
+    <!-- Barra de búsqueda -->
+    <div class="search-container">
+      <ion-item>
+        <ion-icon name="search" slot="start"></ion-icon>
+        <ion-input placeholder="Buscar destinos..."></ion-input>
+      </ion-item>
+    </div>
 
- <!-- BANNER -->
+    <!-- Categorías -->
+    <div class="categorias-container">
+      <h2>Categorías</h2>
+      <div class="categorias-grid">
+        <ion-card [routerLink]="['/viajes/nacionales']">
+          <ion-card-content>
+            <ion-icon name="earth" size="large"></ion-icon>
+            <p>Nacionales</p>
+          </ion-card-content>
+        </ion-card>
 
+        <ion-card [routerLink]="['/viajes/internacionales']">
+          <ion-card-content>
+            <ion-icon name="airplane" size="large"></ion-icon>
+            <p>Internacionales</p>
+          </ion-card-content>
+        </ion-card>
 
+        <ion-card [routerLink]="['/viajes/pasadias']">
+          <ion-card-content>
+            <ion-icon name="sunny" size="large"></ion-icon>
+            <p>Pasadías</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
 
+    <div class="secundary-container">
+    <h2>Próximos Viajes</h2>
+    <ion-content>
+      <swiper-container
+        pagination
+        loop
+      >
+        <swiper-slide *ngFor="let lugar of lugares" [routerLink]="'/package-details/' + lugar.id">
+          <img [src]="lugar.image" alt="{{ lugar.name }}" />
+          <h2>{{ lugar.name }}</h2>
+          <p>Precio: {{ lugar.price | currency:'COP':'symbol' }}</p>
+        </swiper-slide>
+      </swiper-container>
+    </ion-content>
 
-<ion-menu side="start" menuId="first" contentId="main">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menú</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-
-
-
-  <ion-content>
-    <ion-list>
-      <ion-item [routerLink]="['/contacto']">Contacto</ion-item>
-      <ion-item [routerLink]="['/sobre-nosotros']">Sobre Nosotros</ion-item>
-      <ion-item [routerLink]="['/reservas']">Mis Reservas</ion-item>
-    </ion-list>
+    </div>
   </ion-content>
-</ion-menu>
-    
- <!-- Raya verde -->
- <div class="raya-verde"></div>
- 
-<div id="main">
-  <!-- Contenido principal -->
-</div>
+</ion-content>
