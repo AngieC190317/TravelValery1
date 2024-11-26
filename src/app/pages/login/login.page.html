@@ -17,24 +17,38 @@
     <!-- Cuadro blanco con formulario -->
     <div class="login-box">
       
-      <ion-item>
-        <ion-icon slot="start" name="person"></ion-icon> <!-- Icono centrado en el campo -->
-        <ion-label>Username</ion-label>
-        <ion-input type="text" [(ngModel)]="username"></ion-input>
-      </ion-item>
+     <!-- Campo de Usuario -->
+     <ion-item>
+      <ion-icon slot="start" name="person"></ion-icon>
+      <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
+    </ion-item>
+      
 
-      <ion-item>
+       <!-- Campo de Contraseña -->
+       <ion-item>
         <ion-icon slot="start" name="lock-closed"></ion-icon>
-        <ion-label>Password</ion-label>
-        <ion-input [type]="passwordType" [(ngModel)]="password"></ion-input>
-  <ion-icon slot="end" [name]="passwordType === 'text' ? 'eye' : 'eye-off'" (click)="togglePassword()"></ion-icon>
+        <ion-input [type]="passwordType" placeholder="Password" [(ngModel)]="password"></ion-input>
+        <ion-icon
+          slot="end"
+          [name]="passwordType === 'text' ? 'eye' : 'eye-off'"
+          (click)="togglePassword()"
+        ></ion-icon>
       </ion-item>
-
       <ion-button (click)="login()">login</ion-button>
 
-      <div class="forgot-password">
-        <a href="#">¿Olvidaste tu contraseña?</a>
+      <!-- Botón de Gmail -->
+      <div class="gmail-button" (click)="loginWithGoogle()">
+        <img src="assets/icon/gmail-logo.png" alt="Gmail Logo" />
+        <span>Iniciar sesión con Gmail</span>
       </div>
+      
+      <div class="forgot-password">
+        <a href="/reset-password">¿Olvidaste tu contraseña?</a>
+      </div>
+      <div class="register-link">
+        <p>¿No tienes cuenta? <a href="/register">Regístrate aquí</a></p>
+      </div>
+      
     </div>
   </div>
 </ion-content>

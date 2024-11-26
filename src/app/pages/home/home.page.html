@@ -1,21 +1,58 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="main">
+  <ion-content class="primary">
+    <div class="saludo-container">
+      <h1>Hola, {{ user?.displayName || 'Usuario' }}</h1>
+    </div>
+    <!-- Barra de búsqueda -->
+    <div class="search-container">
+      <ion-item>
+        <ion-icon name="search" slot="start"></ion-icon>
+        <ion-input placeholder="Buscar destinos..."></ion-input>
+      </ion-item>
+    </div>
 
-<ion-content>
-  <h2>Categorías</h2>
-  <ion-chip *ngFor="let category of categories">
-    <ion-label>{{ category }}</ion-label>
-  </ion-chip>
+    <!-- Categorías -->
+    <div class="categorias-container">
+      <h2>Categorías</h2>
+      <div class="categorias-grid">
+        <ion-card [routerLink]="['/viajes/nacionales']">
+          <ion-card-content>
+            <ion-icon name="earth" size="large"></ion-icon>
+            <p>Nacionales</p>
+          </ion-card-content>
+        </ion-card>
 
-  <h2>Próximos Viajes</h2>
-  <ion-card *ngFor="let trip of featuredTrips" routerLink="/package-details/{{trip.id}}">
-    <img [src]="trip.image" />
-    <ion-card-header>
-      <ion-card-title>{{ trip.name }}</ion-card-title>
-      <ion-card-subtitle>${{ trip.price }}</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
+        <ion-card [routerLink]="['/viajes/internacionales']">
+          <ion-card-content>
+            <ion-icon name="airplane" size="large"></ion-icon>
+            <p>Internacionales</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card [routerLink]="['/viajes/pasadias']">
+          <ion-card-content>
+            <ion-icon name="sunny" size="large"></ion-icon>
+            <p>Pasadías</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+
+    <div class="secundary-container">
+    <h2>Próximos Viajes</h2>
+    <ion-content>
+      <swiper-container
+        pagination
+        loop
+      >
+        <swiper-slide *ngFor="let lugar of lugares" [routerLink]="'/package-details/' + lugar.id">
+          <img [src]="lugar.image" alt="{{ lugar.name }}" />
+          <h2>{{ lugar.name }}</h2>
+          <p>Precio: {{ lugar.price | currency:'COP':'symbol' }}</p>
+        </swiper-slide>
+      </swiper-container>
+    </ion-content>
+
+    </div>
+  </ion-content>
 </ion-content>
