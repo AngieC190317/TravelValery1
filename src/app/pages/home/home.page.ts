@@ -14,9 +14,19 @@ export class HomePage implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    // Suscribirse al estado de autenticación del usuario
+    // Suscribirse al estado de a**utenticación del usuario
     this.authService.getUser().subscribe((user) => {
       this.user = user; // Aquí obtenemos la información del usuario
     });
   }
+
+  lugares = [
+    { id: 1, name: 'San Andrés', image: '/assets/san-andres.png', price: '1500000' },
+    { id: 2, name: 'Cartagena', image: '/assets/cartagena.png', price: '1200000' },
+  ];
+
+
+
+
+
 }
