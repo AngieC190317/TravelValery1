@@ -9,8 +9,12 @@ import { ActivatedRoute } from '@angular/router';
 export class PackageDetailsPage implements OnInit {
   package: any;
   packages = [
-    { id: 1, name: 'San Andrés', description: 'Incluye tiquetes y hospedaje', image: 'assets/san-andres.png' },
-    { id: 2, name: 'Cartagena', description: 'Disfruta de la ciudad amurallada', image: 'assets/cartagena.png' },
+    { id: 1, name: 'Covenas', image: '/assets/covenas.png', price: '1500000' },
+    { id: 2, name: 'Amazonas', image: '/assets/amazonas.png', price: '1200000' },
+    { id: 3, name: 'Medellin', image: '/assets/medellin.png', price: '' },
+    { id: 4, name: 'Desierto de la Tatacoa', image: '/assets/tatacoa.png', price: ''},
+    { id: 5, name: 'Llanos Orientales', image: '/assets/llanos.png', price: ''},
+    { id: 4, name: 'Santuario de las Lajas', image: '/assets/lajas.png', price: ''}
   ];
 
   constructor(private route: ActivatedRoute) {}
