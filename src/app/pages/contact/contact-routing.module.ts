@@ -24,6 +24,7 @@ const routes: Routes = [
         path: 'favoritos', // Actualizamos aquí
         loadChildren: () => import('../favoritos/favoritos.module').then(m => m.FavoritosPageModule),
       },
+
       {
         path: '',
         redirectTo: 'home',
