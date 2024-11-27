@@ -24,10 +24,22 @@ const routes: Routes = [
         loadChildren: () => import('../pages/favoritos/favoritos.module').then(m => m.FavoritosPageModule),
       },
       {
+        path: 'nacionales',
+        loadChildren: () => import('../viajes/nacionales/nacionales.module').then( m => m.NacionalesPageModule)
+      },
+      {
+        path: 'internacionales',
+        loadChildren: () => import('../viajes/internacionales/internacionales.module').then( m => m.InternacionalesPageModule)
+      },
+      {
+        path: 'pasadia',
+        loadChildren: () => import('../viajes/pasadia/pasadia.module').then( m => m.PasadiaPageModule)
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
-      }
+      },
     ]
   },
 ];

@@ -1,0 +1,18 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let lugar of lugares">
+        <ion-card [routerLink]="'/package-details/' + lugar.id">
+          <ion-img [src]="lugar.image" alt="{{ lugar.name }}"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{ lugar.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p *ngIf="lugar.price">Precio: {{ lugar.price | currency:'COP ':'symbol' }}</p>
+            <p *ngIf="!lugar.price">Precio: No disponible</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
