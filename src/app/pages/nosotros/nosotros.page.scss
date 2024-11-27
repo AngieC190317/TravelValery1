@@ -1,0 +1,32 @@
+/* Fondo blanco para el título */
+.titulo-container {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 2px solid #e0e0e0; /* Línea debajo del título */
+  }
+  
+  .titulo-container h1 {
+    font-size: 36px;
+    color: #000000; /* Texto negro */
+  }
+  
+  /* Fondo azul para el resto de la pantalla */
+  .contenido-azul {
+    background-color: #128BBF; /* Azul del fondo */
+    padding: 20px;
+    height: 100%;
+  }
+  
+  /* Estilo para los contenedores de texto */
+  .contenedor-texto {
+    background-color: #0a5a7e; /* Azul más oscuro */
+    border-radius: 15px;
+    padding: 15px;
+    margin: 20px 0; /* Espaciado entre contenedores */
+    color: #ffffff; /* Texto blanco */
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+  
