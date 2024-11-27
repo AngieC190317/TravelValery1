@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Botón de regresar al menú -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Contenedor del título con fondo blanco -->
+  <div class="titulo-container">
+    <h1>Sobre Nosotros</h1>
+  </div>
+
+  <!-- Fondo azul con los contenedores oscuros -->
+  <div class="contenido-azul">
+    <!-- Primer contenedor -->
+    <div class="contenedor-texto">
+      <p>
+        Somos una empresa dedicada a
+        la comercialización de servicios
+        turísticos dentro y fuera del país,
+        basados en nuestra experiencia
+        en ventas, con un compromiso
+        serio, siempre en la búsqueda
+        de la completa satisfacción de
+        nuestros clientes, brindando un
+        servicio de entera calidad y
+        mejoramiento continuo.
+        Ofrecemos soluciones validas
+        para todas las necesidades
+        particulares de nuestros clientes
+        con responsabilidad, respeto,
+        calidad y puntualidad.
+      </p>
+    </div>
+
+    <!-- Segundo contenedor -->
+    <div class="contenedor-texto">
+      <p>
+        A través de los sistemas generales
+        de distribución tenemos acceso a
+        reservas en más de 80.000 hoteles
+        en el mundo
+      </p>
+    </div>
+  </div>
+</ion-content>
+
+ <!-- Tabs -->
+ <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notifications">
+      <ion-icon name="notifications"></ion-icon>
+      <ion-label>Notifications</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="favoritos">
+      <ion-icon name="heart"></ion-icon>
+      <ion-label>Favoritos</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
