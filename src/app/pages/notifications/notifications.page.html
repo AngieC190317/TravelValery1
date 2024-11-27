@@ -1,16 +1,32 @@
 <ion-header>
   <ion-toolbar>
+    <!-- Botón de volver -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
     <ion-title>Notificaciones</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let notification of notifications">
-      <ion-label>
-        <h2>{{ notification.title }}</h2>
-        <p>{{ notification.message }}</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <!-- Contenedor para el título -->
+  <div class="titulo-container">
+    <h1>Notificaciones</h1>
+  </div>
+
+  <!-- Contenedor azul para las notificaciones -->
+  <div class="contenido-azul">
+    <!-- Ejemplo de notificación -->
+    <div class="notificacion-card">
+      <h2>Reserva Confirmada</h2>
+      <p>Tu reserva para San Andrés ha sido confirmada. ¡Gracias por elegirnos!</p>
+      <span class="fecha">20/11/2024</span>
+    </div>
+
+    <div class="notificacion-card">
+      <h2>Nuevo Destino Disponible</h2>
+      <p>¡Descubre nuestros nuevos paquetes a Isla Margarita con descuentos especiales!</p>
+      <span class="fecha">18/11/2024</span>
+    </div>
+  </div>
 </ion-content>
