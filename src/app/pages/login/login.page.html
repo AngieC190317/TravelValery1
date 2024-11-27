@@ -37,14 +37,18 @@
       <ion-button (click)="login()">login</ion-button>
 
       <!-- Botón de Gmail -->
-      <div class="gmail-button">
+      <div class="gmail-button" (click)="loginWithGoogle()">
         <img src="assets/icon/gmail-logo.png" alt="Gmail Logo" />
         <span>Iniciar sesión con Gmail</span>
       </div>
       
       <div class="forgot-password">
-        <a href="#">¿Olvidaste tu contraseña?</a>
+        <a href="/reset-password">¿Olvidaste tu contraseña?</a>
       </div>
+      <div class="register-link">
+        <p>¿No tienes cuenta? <a href="/register">Regístrate aquí</a></p>
+      </div>
+      
     </div>
   </div>
 </ion-content>

@@ -1,22 +1,56 @@
-<ion-tabs>
+<ion-app>
+  <!-- Menú Lateral -->
+  <ion-menu side="start" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Inicio</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item [routerLink]="['/contacto']">Contacto</ion-item>
+        <ion-item [routerLink]="['/nosotros']">Sobre Nosotros</ion-item>
+        <ion-item [routerLink]="['/reservas']">Mis Reservas</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home">
-        <ion-icon name="home"></ion-icon>
-        <ion-label>Home</ion-label>
-      </ion-tab-button>
+  <!-- Contenido Principal -->
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button> <!-- Botón del Menú -->
+        </ion-buttons>
 
-      <ion-tab-button tab="notifications">
-        <ion-icon name="notifications"></ion-icon>
-        <ion-label>Notifications</ion-label>
-      </ion-tab-button>
+        <ion-buttons slot="end">
+          <ion-button [routerLink]="['/profile']">
+            <ion-icon name="person" size="large"></ion-icon>
+          </ion-button>
+        </ion-buttons>
 
-      <ion-tab-button tab="my-reservations">
-        <ion-icon name="calendar"></ion-icon>
-        <ion-label>My Reservations</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-</ion-tabs>
+    <!-- Tabs -->
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="notifications">
+          <ion-icon name="notifications"></ion-icon>
+          <ion-label>Notifications</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="favoritos">
+          <ion-icon name="heart"></ion-icon>
+          <ion-label>Favoritos</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </div>
+</ion-app>

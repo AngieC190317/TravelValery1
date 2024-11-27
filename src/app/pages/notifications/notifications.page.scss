@@ -1,0 +1,53 @@
+/* Fondo blanco para el título */
+.titulo-container {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  .titulo-container h1 {
+    font-size: 40px;
+    color: #000000; /* Texto negro */
+  }
+  
+  /* Fondo azul para las notificaciones */
+  .contenido-azul {
+    background-color: #128BBF;
+    padding: 20px;
+    height: 100%;
+  }
+  
+  /* Tarjeta de notificación */
+  .notificacion-card {
+    background-color: #ffffff; /* Fondo blanco para la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado entre tarjetas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    color: #333333; /* Texto gris oscuro */
+  }
+  
+  /* Título de la notificación */
+  .notificacion-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #128BBF; /* Azul para destacar el título */
+  }
+  
+  /* Texto del mensaje */
+  .notificacion-card p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* Fecha de la notificación */
+  .notificacion-card .fecha {
+    font-size: 12px;
+    color: #888888; /* Texto gris claro para la fecha */
+    text-align: right;
+    display: block;
+  }
+  

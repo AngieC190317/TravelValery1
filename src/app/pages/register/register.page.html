@@ -1,0 +1,53 @@
+
+<div class="center-container">
+  <div class="logo-container">
+    <img src="assets/logo.png" alt="Logo" class="logo">
+  </div>
+</div>
+
+
+<ion-content>
+  <div class="register-container">
+    <ion-card class="register-card">
+      <ion-card-header>
+        <ion-card-title>Crear cuenta</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Campo de Nombre -->
+        <ion-item>
+          <ion-icon slot="start" name="person"></ion-icon>
+          <ion-input placeholder="Nombre completo" [(ngModel)]="fullName"></ion-input>
+        </ion-item>
+
+        <!-- Campo de Correo Electrónico -->
+        <ion-item>
+          <ion-icon slot="start" name="mail"></ion-icon>
+          <ion-input placeholder="Correo electrónico" [(ngModel)]="email" type="email"></ion-input>
+        </ion-item>
+
+        <!-- Campo de Contraseña -->
+        <ion-item>
+          <ion-icon slot="start" name="lock-closed"></ion-icon>
+          <ion-input placeholder="Contraseña" [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
+
+        <!-- Campo de Confirmar Contraseña -->
+        <ion-item>
+          <ion-icon slot="start" name="lock-closed"></ion-icon>
+          <ion-input placeholder="Confirmar contraseña" [(ngModel)]="confirmPassword" type="password"></ion-input>
+        </ion-item>
+
+        <!-- Botón de Registro -->
+        <ion-button (click)="register()">Registrarse</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Enlace para regresar al inicio de sesión -->
+    <div class="login-link">
+      <p>¿Ya tienes una cuenta? 
+        <br>
+        <a href="/login">Inicia sesión aquí</a></p>
+    </div>
+  </div>
+</ion-content>
