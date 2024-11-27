@@ -1,0 +1,79 @@
+/* Parte blanca arriba */
+.contact-section {
+  background-color: white;
+  padding: 2rem;
+  text-align: center;
+  color: black;
+  h1{
+  font-size: 70px;
+}
+
+}
+
+/* Parte azul abajo */
+.social-section {
+  background-color: #0096d1;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height:80%;
+}
+
+/* Título de las redes sociales */
+.social-section h2 {
+  margin-bottom: 1rem;
+}
+
+/* Contenedor de los iconos sociales */
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.social-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+ion-icon {
+  font-size: 2rem;
+}
+
+span {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Información de contacto debajo de los iconos en la parte azul */
+.info-section {
+  margin-top: 150px;
+  padding: 1rem;
+}
+
+.info-card {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  --background: #f1f1f1;
+}
+
+.info-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-detail {
+  font-size: 1rem;
+}
+
+/* Footer del layout */
+ion-footer {
+  position: relative;
+  z-index: 10;
+}
