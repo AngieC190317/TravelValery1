@@ -15,21 +15,24 @@
     <div class="categorias-container">
       <h2>Categorías</h2>
       <div class="categorias-grid">
-        <ion-card [routerLink]="['/viajes/nacionales']">
+        <!-- Botón Nacionales -->
+        <ion-card [routerLink]="['/tabs/nacionales']">
           <ion-card-content>
             <ion-icon name="earth" size="large"></ion-icon>
             <p>Nacionales</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card [routerLink]="['/viajes/internacionales']">
+        <!-- Botón Internacionales -->
+        <ion-card [routerLink]="['/tabs/internacionales']">
           <ion-card-content>
             <ion-icon name="airplane" size="large"></ion-icon>
             <p>Internacionales</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card [routerLink]="['/viajes/pasadias']">
+        <!-- Botón Pasadías -->
+        <ion-card [routerLink]="['/tabs/pasadia']">
           <ion-card-content>
             <ion-icon name="sunny" size="large"></ion-icon>
             <p>Pasadías</p>
